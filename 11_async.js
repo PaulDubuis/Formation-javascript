@@ -11,7 +11,10 @@
  *    - ne pas utiliser async await
  * 
  */
+
+const {sleep} = require("./10_promise");
 const usingThen = (cb) => {
+  sleep().then(cb)
 }
 
 /**
@@ -25,9 +28,10 @@ const usingThen = (cb) => {
  *   - ne pas utiliser .then
  */
 
-const usingAwait = (cb) => {
+const usingAwait = async (cb) => {
+  await sleep()
+  cb()
 }
-
 /**
  * Créez une fonction asynchrone qui effectue un appel api vers l'url passé en paramètre
  * retourne le résultat de la requête (body)
@@ -42,9 +46,11 @@ const usingAwait = (cb) => {
 
 //décommentez la ligne suivante une fois le package installé
 //const axios = require("axios");
+const axios = require('axios');
 
 const apiResponse = async (url) => {
-
+  const res = await axios.get(url)
+  return res.data
 }
 
 module.exports = {usingThen, usingAwait, apiResponse};
