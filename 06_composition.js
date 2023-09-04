@@ -40,12 +40,6 @@ const merge = (obj1, obj2) => ( {...obj1, ...obj2} )
 
 const setName = (obj, name) => ( {...obj, name: name} )
 
-
-console.log(concat([1, 2, 3], [4, 5, 6]))
-console.log(push([1, 2, 3], 4))
-console.log(merge({a: 1, b: 2}, {c: 3, d: 4}))
-console.log(setName({name: 'toto'}, 'titi'))
-
 // astuce: {...obj} crée une copie de l'objet, c'est un des principes de l'immutabilité et évite les problèmes de référence
 module.exports = {concat, push, merge, setName}
 
