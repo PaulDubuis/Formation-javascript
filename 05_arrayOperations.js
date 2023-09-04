@@ -55,20 +55,19 @@ const sum = (array) => ( array.reduce((res, i) => res + i, 0 ))
  *   - Vous ne pouvez pas utiliser de variable (autre que l'argument de la fonction)
   */
 
-const findUserById = (array, id) => ( array.find((user) => user.id === id))
+const findUserById = (array, id) => ( array.find((user) => user.id === id).name)
 
 
-// const PrintTest = (a, b, c) => {
-//   console.log(!c ? a(b) : a(b, c))
-// }
-// const a1 = [1, 2, 3, 4, 5]
-// const a2 = ["A1", "A2", "A3", "DE", "TR"]
-// const a3 = [1, 2, 3]
-// const a4 = [ {id: 1, name: 'John'}, {id: 2, name: 'Doe'}, {id: 3, name: 'Foo'}, {id: 4, name: 'Bar'} ]
-
-// PrintTest(multiplyByTwo, a1)
-// PrintTest(filterNameStartByA, a2)
-// PrintTest(sum, a3)
-// PrintTest(findUserById, a4, 2)
+const PrintTest = (a, b, c) => {
+  console.log(!c ? a(b) : a(b, c))
+}
+const a1 = [1, 2, 3, 4, 5]
+const a2 = ["A1", "A2", "A3", "DE", "TR"]
+const a3 = [1, 2, 3]
+const a4 = [ {id: 1, name: 'John'}, {id: 2, name: 'Doe'}, {id: 3, name: 'Foo'}, {id: 4, name: 'Bar'} ]
+PrintTest(multiplyByTwo, a1)
+PrintTest(filterNameStartByA, a2)
+PrintTest(sum, a3)
+PrintTest(findUserById, a4, 2)
 
 module.exports = {multiplyByTwo, filterNameStartByA, sum, findUserById};
